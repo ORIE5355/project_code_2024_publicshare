@@ -15,7 +15,10 @@ class Agent(object):
         
         self.project_part = params['project_part'] 
 
-        ### starting remaining inventory and inventory replenish rate are defined in settings.py
+        ### starting remaining inventory and inventory replenish rate are provided
+        ## every time the inventory is replenished, it is set to the inventory limit
+        ## the inventory_replenish rate is how often the inventory is replenished
+        ## for example, we will run with inventory_replenish = 20, with the limit of 11. Then, the inventory will be replenished every 20 time steps (time steps 0, 20, 40, ...) and the inventory will be set to 11 at those time steps. 
         self.remaining_inventory = params['inventory_limit']
         self.inventory_replenish = params['inventory_replenish']
 
@@ -90,5 +93,5 @@ class Agent(object):
         ### but you are expected to use the new_buyer_covariates
         ### combined with models you come up with using the training data 
         ### and history of prices from each team to set a better price for the item
-        return 112.358
+        return 30.123 #112.358
 
